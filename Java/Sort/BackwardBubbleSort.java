@@ -1,6 +1,9 @@
 import java.util.Arrays;
 
-public class BubbleSort{
+/**
+ * Bubble Sort implementation.
+ */
+public class BackwardBubbleSort{
 	public static void main(String[] args){
 		int[] array = {7,1,4,2,3,10,15,29, 11,9,0};
 		
@@ -13,15 +16,16 @@ public class BubbleSort{
 		
 		for(int i = array.length-1; i > sortedIndex; i--)
 		{
-      System.out.println("First for loop" + Arrays.toString(array));
 			for(int j = array.length-1; j > sortedIndex; j--){
-        System.out.println("Second for loop" + Arrays.toString(array));
+				// Elements are swapped if the succeeding elem is smaller than
+				// the preceding.
 				if(array[j] < array[j-1]){
 					temp = array[j-1];
 					array[j-1] = array[j];
 					array[j] = temp;
 				}
 			}
+			// Sorted boundary is updated so that the elements are not gone over again.
 			sortedIndex++;
 		}
 		
